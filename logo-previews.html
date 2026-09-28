@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="观象 V8 公司 Logo 与产品 icon 概念预览">
+<title>观象 V8 · Logo 概念预览</title>
+<style>
+  :root {
+    color-scheme: light;
+    --ink: #0a0f1e;
+    --muted: #65738b;
+    --soft: #edf3f8;
+    --line: #dce5ee;
+    --panel: #ffffff;
+    --canvas: #f4f7fb;
+    --cyan: #11b9d4;
+    --blue: #3b82f6;
+    --violet: #8b5cf6;
+    --green: #22b879;
+    --orange: #f97316;
+    --shadow: 0 22px 65px rgba(16, 32, 58, .11);
+    --sans: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    color: var(--ink);
+    background: var(--canvas);
+    font-family: var(--sans);
+    line-height: 1.6;
+  }
+  button { font: inherit; }
+  .shell { width: min(1240px, calc(100% - 40px)); margin: 0 auto; }
+  .topbar {
+    position: sticky; top: 0; z-index: 20;
+    border-bottom: 1px solid color-mix(in srgb, var(--line) 80%, transparent);
+    background: color-mix(in srgb, var(--canvas) 86%, transparent);
+    backdrop-filter: blur(18px);
+  }
+  .topbar-inner { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .brand { display: flex; align-items: center; gap: 12px; color: inherit; text-decoration: none; }
+  .brand-mark { width: 38px; height: 38px; border-radius: 12px; color: #fff; background: var(--ink); padding: 7px; }
+  .brand-copy { display: grid; line-height: 1.15; }
+  .brand-copy strong { font-size: 15px; letter-spacing: .05em; }
+  .brand-copy span { color: var(--muted); font: 10px var(--mono); letter-spacing: .12em; margin-top: 4px; }
+  .tools { display: flex; align-items: center; gap: 10px; }
+  .tool-button { border: 1px solid var(--line); border-radius: 999px; background: var(--panel); color: var(--ink); padding: 7px 12px; cursor: pointer; font-size: 12px; }
+  .tool-button:hover { border-color: var(--cyan); }
+  .hero { padding: 82px 0 46px; }
+  .eyebrow { color: var(--cyan); font: 11px var(--mono); letter-spacing: .2em; text-transform: uppercase; }
+  h1 { max-width: 850px; margin: 14px 0 18px; font-size: clamp(38px, 6vw, 76px); line-height: .98; letter-spacing: -.065em; }
+  .hero-lede { max-width: 720px; color: var(--muted); margin: 0; font-size: clamp(16px, 2vw, 20px); }
+  .hero-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
+  .pill { display: inline-flex; align-items: center; min-height: 28px; padding: 0 11px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); background: var(--panel); font-size: 12px; }
+  .section-intro { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin: 20px 0 18px; }
+  .section-intro h2 { margin: 0; font-size: 25px; letter-spacing: -.035em; }
+  .section-intro p { max-width: 540px; margin: 0; color: var(--muted); font-size: 13px; text-align: right; }
+  .concepts { display: grid; gap: 28px; }
+  .concept {
+    overflow: hidden; border: 1px solid var(--line); border-radius: 28px;
+    background: var(--panel); box-shadow: var(--shadow);
+  }
+  .concept-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 22px; padding: 30px 30px 22px; border-bottom: 1px solid var(--line); }
+  .concept-index { color: var(--cyan); font: 12px var(--mono); letter-spacing: .12em; }
+  .concept h3 { margin: 8px 0 5px; font-size: 27px; letter-spacing: -.045em; }
+  .concept-sub { margin: 0; max-width: 620px; color: var(--muted); font-size: 14px; }
+  .concept-tag { align-self: start; border-radius: 999px; background: var(--soft); color: var(--ink); padding: 7px 11px; font: 10px var(--mono); letter-spacing: .08em; white-space: nowrap; }
+  .showcase { display: grid; grid-template-columns: 1.1fr 1fr; gap: 1px; background: var(--line); }
+  .hero-mark { min-height: 320px; display: grid; place-items: center; padding: 32px; background: #081323; position: relative; overflow: hidden; }
+  .hero-mark::before { content: ""; position: absolute; inset: 15% 7%; background: repeating-linear-gradient(90deg, transparent 0 48px, rgba(255,255,255,.055) 49px 50px), repeating-linear-gradient(0deg, transparent 0 48px, rgba(255,255,255,.055) 49px 50px); mask-image: linear-gradient(to bottom, transparent, #000 35%, transparent); }
+  .hero-mark svg { position: relative; z-index: 1; width: min(240px, 74%); height: auto; filter: drop-shadow(0 12px 28px rgba(34, 211, 238, .18)); }
+  .hero-mark .mark-label { position: absolute; left: 24px; bottom: 20px; color: rgba(255,255,255,.48); font: 10px var(--mono); letter-spacing: .14em; }
+  .variant-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); }
+  .variant { min-height: 159px; display: grid; place-items: center; position: relative; padding: 20px; }
+  .variant svg { width: 100%; max-width: 128px; height: 100px; }
+  .variant-name { position: absolute; left: 16px; top: 13px; color: var(--muted); font: 10px var(--mono); letter-spacing: .08em; }
+  .dark { background: #0a0f1e; color: #fff; }
+  .light { background: #f6fafc; color: var(--ink); }
+  .black { background: #fff; color: #05070b; }
+  .white { background: #1d2637; color: #fff; }
+  .variant .white-note { color: rgba(255,255,255,.5); }
+  .detail { display: grid; grid-template-columns: 1.35fr 1fr; gap: 1px; background: var(--line); border-top: 1px solid var(--line); }
+  .detail-copy, .lockups { background: var(--panel); padding: 26px 30px; }
+  .detail-copy h4, .lockups h4 { margin: 0 0 13px; font-size: 13px; letter-spacing: .04em; }
+  .detail-copy p { margin: 0; color: var(--muted); font-size: 13px; }
+  .keywords { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 18px; }
+  .keyword { padding: 5px 8px; border-radius: 6px; color: var(--muted); background: var(--soft); font: 10px var(--mono); }
+  .lockup { display: flex; align-items: center; gap: 12px; min-height: 58px; padding: 11px 0; border-bottom: 1px solid var(--line); }
+  .lockup:last-child { border-bottom: 0; padding-bottom: 0; }
+  .lockup svg { flex: 0 0 auto; width: 42px; height: 42px; }
+  .lockup strong { display: block; font-size: 14px; line-height: 1.25; }
+  .lockup small { display: block; color: var(--muted); margin-top: 2px; font: 9px var(--mono); letter-spacing: .05em; }
+  .specs { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); background: var(--panel); }
+  .spec { min-height: 83px; padding: 16px 20px; border-right: 1px solid var(--line); }
+  .spec:last-child { border-right: 0; }
+  .spec b { display: block; margin-bottom: 4px; font: 10px var(--mono); color: var(--cyan); letter-spacing: .08em; }
+  .spec span { color: var(--muted); font-size: 12px; }
+  .footer { padding: 70px 0 90px; }
+  .footer-note { border: 1px solid var(--line); border-radius: 20px; padding: 22px 25px; background: var(--panel); color: var(--muted); font-size: 13px; }
+  .footer-note strong { color: var(--ink); }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  @media (max-width: 760px) {
+    .shell { width: min(100% - 24px, 1240px); }
+    .hero { padding: 58px 0 30px; }
+    .topbar-inner { min-height: 62px; }
+    .brand-copy span { display: none; }
+    .tool-button { padding: 6px 9px; }
+    .section-intro, .concept-head { display: block; }
+    .section-intro p { margin-top: 9px; text-align: left; }
+    .concept-tag { display: inline-block; margin-top: 18px; }
+    .showcase, .detail { grid-template-columns: 1fr; }
+    .hero-mark { min-height: 270px; }
+    .specs { grid-template-columns: repeat(2, 1fr); }
+    .spec:nth-child(2) { border-right: 0; }
+    .spec:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  :root[data-theme="dark"] { color-scheme: dark; --ink: #eef5ff; --muted: #9aa9bd; --soft: #172235; --line: #2b3a50; --panel: #111b2b; --canvas: #0a101c; --shadow: 0 22px 65px rgba(0,0,0,.25); }
+  :root[data-theme="dark"] .light { background: #f6fafc; color: #0a0f1e; }
+  :root[data-theme="dark"] .black { background: #fff; color: #05070b; }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="shell topbar-inner">
+    <a class="brand" href="#top" aria-label="返回顶部">
+      <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="20" fill="none" stroke="url(#brand-g)" stroke-width="5"/><circle cx="32" cy="32" r="6" fill="#22d3ee"/><path d="M48 48l9 9M57 57h-8M57 57v-8" fill="none" stroke="#34d399" stroke-width="4" stroke-linecap="round"/><defs><linearGradient id="brand-g" x1="9" y1="9" x2="55" y2="55"><stop stop-color="#3b82f6"/><stop offset=".55" stop-color="#22d3ee"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs></svg>
+      <span class="brand-copy"><strong>观象 · V8</strong><span>LOGO CONCEPT LAB / LOCAL PREVIEW</span></span>
+    </a>
+    <div class="tools"><span class="pill">4 个方向 · 未替换现有资产</span><button class="tool-button" id="theme-toggle" type="button">切换深色</button></div>
+  </div>
+</header>
+<main id="top" class="shell">
+  <section class="hero">
+    <div class="eyebrow">Brand system / visual exploration</div>
+    <h1>把“看见”变成<br><span style="color:var(--cyan)">可执行的智能。</span></h1>
+    <p class="hero-lede">这是一组为苏州观象信息科技有限公司与 V8 视频安全智能体平台准备的 Logo 概念方向。每个方案都从镜头、四层智能体、边缘推理和主动执行出发，但刻意避开普通摄像头、播放键和泛化盾牌。</p>
+    <div class="hero-meta"><span class="pill">自包含 HTML</span><span class="pill">内联 SVG</span><span class="pill">支持深浅背景 / 黑白稿</span><span class="pill">可直接本地打开</span></div>
+  </section>
+  <section aria-labelledby="concept-title">
+    <div class="section-intro"><h2 id="concept-title">四个可发展的品牌母题</h2><p>先比较识别性、缩小尺寸表现和品牌叙事，再选定一个方向制作正式 SVG 资产。</p></div>
+    <div class="concepts">
+      <!-- A -->
+      <article class="concept" id="g-loop">
+        <div class="concept-head"><div><div class="concept-index">A / 01</div><h3>G-Loop · 观象环</h3><p class="concept-sub">把“G”拆成四段开放轨道，中心镜核持续捕捉世界，右下的执行脉冲让静态 Logo 带有向前的动作。</p></div><div class="concept-tag">闭环执行 / 母标首选</div></div>
+        <div class="showcase">
+          <div class="hero-mark"><svg viewBox="0 0 240 240" role="img" aria-label="G-Loop 观象环渐变版"><defs><linearGradient id="ga" x1="36" y1="30" x2="204" y2="210"><stop stop-color="#3b82f6"/><stop offset=".5" stop-color="#22d3ee"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs><path d="M90 27H67c-22 0-40 18-40 40v23M150 27h23c22 0 40 18 40 40v23M213 150v23c0 22-18 40-40 40h-23M90 213H67c-22 0-40-18-40-40v-23" fill="none" stroke="url(#ga)" stroke-width="16" stroke-linecap="round"/><circle cx="120" cy="120" r="45" fill="#081323" stroke="#22d3ee" stroke-width="8"/><circle cx="120" cy="120" r="16" fill="#22d3ee"/><path d="M167 167l39 39m0 0h-28m28 0v-28" fill="none" stroke="#34d399" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="mark-label">PERCEIVE / REASON / ACT</span></div>
+          <div class="variant-grid">
+            <div class="variant dark"><span class="variant-name">DARK / 160</span><svg viewBox="0 0 160 160"><path d="M60 18H45c-15 0-27 12-27 27v15M100 18h15c15 0 27 12 27 27v15M142 100v15c0 15-12 27-27 27h-15M60 142H45c-15 0-27-12-27-27v-15" fill="none" stroke="url(#ga2)" stroke-width="11" stroke-linecap="round"/><circle cx="80" cy="80" r="30" fill="#0a0f1e" stroke="#22d3ee" stroke-width="6"/><circle cx="80" cy="80" r="10" fill="#22d3ee"/><path d="M111 111l28 28m0 0h-20m20 0v-20" fill="none" stroke="#34d399" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="ga2" x1="20" y1="15" x2="140" y2="140"><stop stop-color="#3b82f6"/><stop offset=".55" stop-color="#22d3ee"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs></svg></div>
+            <div class="variant light"><span class="variant-name">LIGHT / 160</span><svg viewBox="0 0 160 160"><path d="M60 18H45c-15 0-27 12-27 27v15M100 18h15c15 0 27 12 27 27v15M142 100v15c0 15-12 27-27 27h-15M60 142H45c-15 0-27-12-27-27v-15" fill="none" stroke="#3b82f6" stroke-width="11" stroke-linecap="round"/><circle cx="80" cy="80" r="30" fill="#f6fafc" stroke="#11b9d4" stroke-width="6"/><circle cx="80" cy="80" r="10" fill="#11b9d4"/><path d="M111 111l28 28m0 0h-20m20 0v-20" fill="none" stroke="#22b879" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="variant black"><span class="variant-name">BLACK / 1C</span><svg viewBox="0 0 160 160"><path d="M60 18H45c-15 0-27 12-27 27v15M100 18h15c15 0 27 12 27 27v15M142 100v15c0 15-12 27-27 27h-15M60 142H45c-15 0-27-12-27-27v-15" fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="round"/><circle cx="80" cy="80" r="30" fill="white" stroke="currentColor" stroke-width="6"/><circle cx="80" cy="80" r="10" fill="currentColor"/><path d="M111 111l28 28m0 0h-20m20 0v-20" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="variant white"><span class="variant-name white-note">WHITE / 1C</span><svg viewBox="0 0 160 160"><path d="M60 18H45c-15 0-27 12-27 27v15M100 18h15c15 0 27 12 27 27v15M142 100v15c0 15-12 27-27 27h-15M60 142H45c-15 0-27-12-27-27v-15" fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="round"/><circle cx="80" cy="80" r="30" fill="none" stroke="currentColor" stroke-width="6"/><circle cx="80" cy="80" r="10" fill="currentColor"/><path d="M111 111l28 28m0 0h-20m20 0v-20" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+        </div>
+        <div class="detail"><div class="detail-copy"><h4>设计逻辑</h4><p>四段轨道对应感知、理解、决策、执行；中心镜核表达“观象”，缺口与右下脉冲表达系统不是被动观看，而是把判断推进到动作。</p><div class="keywords"><span class="keyword">摄像头感知</span><span class="keyword">四层闭环</span><span class="keyword">主动执行</span><span class="keyword">G / Guangxiang</span></div></div><div class="lockups"><h4>锁定组合预览</h4><div class="lockup"><svg viewBox="0 0 160 160"><use href="#mini-loop"/></svg><div><strong>苏州观象信息科技有限公司</strong><small>GUANGXIANG INFORMATION TECHNOLOGY</small></div></div><div class="lockup"><svg viewBox="0 0 160 160"><use href="#mini-loop"/></svg><div><strong>AI 视频安全智能体平台</strong><small>V8 VIDEO INTELLIGENCE PLATFORM</small></div></div></div></div>
+        <div class="specs"><div class="spec"><b>64 / 32 / 16</b><span>中心镜核和开放轨道仍可辨识</span></div><div class="spec"><b>BEST FOR</b><span>公司母标、产品主 icon、导航</span></div><div class="spec"><b>COLOR</b><span>#3B82F6 · #22D3EE · #8B5CF6 · #34D399</span></div><div class="spec"><b>CHARACTER</b><span>开放、持续、可行动</span></div></div>
+      </article>
+      <!-- B -->
+      <article class="concept" id="lens-core">
+        <div class="concept-head"><div><div class="concept-index">B / 02</div><h3>Lens Core · 四层镜核</h3><p class="concept-sub">四个逐层收紧的视界围绕一个推理核心，像镜头对焦，也像智能体把复杂现场收敛为一个可执行判断。</p></div><div class="concept-tag">架构隐喻 / 技术感</div></div>
+        <div class="showcase">
+          <div class="hero-mark"><svg viewBox="0 0 240 240" role="img" aria-label="Lens Core 四层镜核渐变版"><defs><linearGradient id="gb" x1="28" y1="25" x2="212" y2="215"><stop stop-color="#22d3ee"/><stop offset=".48" stop-color="#3b82f6"/><stop offset="1" stop-color="#f97316"/></linearGradient></defs><rect x="29" y="29" width="182" height="182" rx="42" fill="none" stroke="url(#gb)" stroke-width="11" transform="rotate(0 120 120)"/><rect x="52" y="52" width="136" height="136" rx="30" fill="none" stroke="url(#gb)" stroke-width="10" transform="rotate(45 120 120)"/><rect x="73" y="73" width="94" height="94" rx="19" fill="none" stroke="#22d3ee" stroke-width="9" transform="rotate(0 120 120)"/><rect x="94" y="94" width="52" height="52" rx="12" fill="#081323" stroke="#f97316" stroke-width="7" transform="rotate(45 120 120)"/><circle cx="120" cy="120" r="9" fill="#fff"/></svg><span class="mark-label">FOCUS THE SIGNAL</span></div>
+          <div class="variant-grid">
+            <div class="variant dark"><span class="variant-name">DARK / 160</span><svg viewBox="0 0 160 160"><rect x="19" y="19" width="122" height="122" rx="28" fill="none" stroke="#22d3ee" stroke-width="8"/><rect x="35" y="35" width="90" height="90" rx="20" fill="none" stroke="#3b82f6" stroke-width="7" transform="rotate(45 80 80)"/><rect x="52" y="52" width="56" height="56" rx="11" fill="none" stroke="#f97316" stroke-width="6"/><circle cx="80" cy="80" r="7" fill="#fff"/></svg></div>
+            <div class="variant light"><span class="variant-name">LIGHT / 160</span><svg viewBox="0 0 160 160"><rect x="19" y="19" width="122" height="122" rx="28" fill="none" stroke="#11b9d4" stroke-width="8"/><rect x="35" y="35" width="90" height="90" rx="20" fill="none" stroke="#3b82f6" stroke-width="7" transform="rotate(45 80 80)"/><rect x="52" y="52" width="56" height="56" rx="11" fill="none" stroke="#f97316" stroke-width="6"/><circle cx="80" cy="80" r="7" fill="#0a0f1e"/></svg></div>
+            <div class="variant black"><span class="variant-name">BLACK / 1C</span><svg viewBox="0 0 160 160"><rect x="19" y="19" width="122" height="122" rx="28" fill="none" stroke="currentColor" stroke-width="8"/><rect x="35" y="35" width="90" height="90" rx="20" fill="none" stroke="currentColor" stroke-width="7" transform="rotate(45 80 80)"/><rect x="52" y="52" width="56" height="56" rx="11" fill="none" stroke="currentColor" stroke-width="6"/><circle cx="80" cy="80" r="7" fill="currentColor"/></svg></div>
+            <div class="variant white"><span class="variant-name white-note">WHITE / 1C</span><svg viewBox="0 0 160 160"><rect x="19" y="19" width="122" height="122" rx="28" fill="none" stroke="currentColor" stroke-width="8"/><rect x="35" y="35" width="90" height="90" rx="20" fill="none" stroke="currentColor" stroke-width="7" transform="rotate(45 80 80)"/><rect x="52" y="52" width="56" height="56" rx="11" fill="none" stroke="currentColor" stroke-width="6"/><circle cx="80" cy="80" r="7" fill="currentColor"/></svg></div>
+          </div>
+        </div>
+        <div class="detail"><div class="detail-copy"><h4>设计逻辑</h4><p>外层是摄像头视界，中层是场景理解，内层是决策，中心点是执行信号。方与圆、旋转与对焦形成更偏“计算视觉”的独特骨架。</p><div class="keywords"><span class="keyword">四层智能体</span><span class="keyword">视觉计算</span><span class="keyword">边缘推理</span><span class="keyword">SDK 节点</span></div></div><div class="lockups"><h4>锁定组合预览</h4><div class="lockup"><svg viewBox="0 0 160 160"><use href="#mini-lens"/></svg><div><strong>苏州观象信息科技有限公司</strong><small>GUANGXIANG INFORMATION TECHNOLOGY</small></div></div><div class="lockup"><svg viewBox="0 0 160 160"><use href="#mini-lens"/></svg><div><strong>AI 视频安全智能体平台</strong><small>V8 VIDEO INTELLIGENCE PLATFORM</small></div></div></div></div>
+        <div class="specs"><div class="spec"><b>64 / 32 / 16</b><span>高对比中心点保持清楚</span></div><div class="spec"><b>BEST FOR</b><span>平台架构、SDK、开发者生态</span></div><div class="spec"><b>COLOR</b><span>#22D3EE · #3B82F6 · #F97316</span></div><div class="spec"><b>CHARACTER</b><span>精密、聚焦、计算</span></div></div>
+      </article>
+      <!-- C -->
+      <article class="concept" id="sentinel-frame">
+        <div class="concept-head"><div><div class="concept-index">C / 03</div><h3>Sentinel Frame · 主动视界</h3><p class="concept-sub">不画一面普通盾牌，而是将盾牌的稳定底部藏进取景框，让“防护”成为视界结构的一部分。</p></div><div class="concept-tag">主动安全 / 场景防护</div></div>
+        <div class="showcase">
+          <div class="hero-mark"><svg viewBox="0 0 240 240" role="img" aria-label="Sentinel Frame 主动视界渐变版"><defs><linearGradient id="gc" x1="24" y1="25" x2="215" y2="215"><stop stop-color="#8b5cf6"/><stop offset=".5" stop-color="#22d3ee"/><stop offset="1" stop-color="#34d399"/></linearGradient></defs><path d="M72 27H52c-14 0-25 11-25 25v20M168 27h20c14 0 25 11 25 25v20M213 168v20c0 14-11 25-25 25h-20M72 213H52c-14 0-25-11-25-25v-20" fill="none" stroke="url(#gc)" stroke-width="13" stroke-linecap="round"/><path d="M120 52l65 25v48c0 45-27 72-65 91-38-19-65-46-65-91V77l65-25Z" fill="#081323" stroke="#22d3ee" stroke-width="8" stroke-linejoin="round"/><path d="M91 124l20 20 40-44" fill="none" stroke="#34d399" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/><path d="M173 188l35 0m-15-15l15 15-15 15" fill="none" stroke="#f97316" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="mark-label">SEE FIRST / ACT EARLY</span></div>
+          <div class="variant-grid">
+            <div class="variant dark"><span class="variant-name">DARK / 160</span><svg viewBox="0 0 160 160"><path d="M48 18H35c-9 0-17 8-17 17v14M112 18h13c9 0 17 8 17 17v14M142 112v13c0 9-8 17-17 17h-13M48 142H35c-9 0-17-8-17-17v-13" fill="none" stroke="#8b5cf6" stroke-width="8" stroke-linecap="round"/><path d="M80 34l42 17v31c0 29-18 47-42 60-24-13-42-31-42-60V51l42-17Z" fill="#0a0f1e" stroke="#22d3ee" stroke-width="6"/><path d="M61 81l13 13 26-29" fill="none" stroke="#34d399" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="variant light"><span class="variant-name">LIGHT / 160</span><svg viewBox="0 0 160 160"><path d="M48 18H35c-9 0-17 8-17 17v14M112 18h13c9 0 17 8 17 17v14M142 112v13c0 9-8 17-17 17h-13M48 142H35c-9 0-17-8-17-17v-13" fill="none" stroke="#8b5cf6" stroke-width="8" stroke-linecap="round"/><path d="M80 34l42 17v31c0 29-18 47-42 60-24-13-42-31-42-60V51l42-17Z" fill="#f6fafc" stroke="#11b9d4" stroke-width="6"/><path d="M61 81l13 13 26-29" fill="none" stroke="#22b879" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="variant black"><span class="variant-name">BLACK / 1C</span><svg viewBox="0 0 160 160"><path d="M48 18H35c-9 0-17 8-17 17v14M112 18h13c9 0 17 8 17 17v14M142 112v13c0 9-8 17-17 17h-13M48 142H35c-9 0-17-8-17-17v-13" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/><path d="M80 34l42 17v31c0 29-18 47-42 60-24-13-42-31-42-60V51l42-17Z" fill="white" stroke="currentColor" stroke-width="6"/><path d="M61 81l13 13 26-29" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="variant white"><span class="variant-name white-note">WHITE / 1C</span><svg viewBox="0 0 160 160"><path d="M48 18H35c-9 0-17 8-17 17v14M112 18h13c9 0 17 8 17 17v14M142 112v13c0 9-8 17-17 17h-13M48 142H35c-9 0-17-8-17-17v-13" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/><path d="M80 34l42 17v31c0 29-18 47-42 60-24-13-42-31-42-60V51l42-17Z" fill="none" stroke="currentColor" stroke-width="6"/><path d="M61 81l13 13 26-29" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+        </div>
+        <div class="detail"><div class="detail-copy"><h4>设计逻辑</h4><p>边角取景框代表持续观察，内部轮廓像一面稳定的防护结构，勾形是风险闭环后的“已处理”状态，外侧箭头保留主动出击的方向感。</p><div class="keywords"><span class="keyword">主动安全</span><span class="keyword">风险闭环</span><span class="keyword">告警处置</span><span class="keyword">工业场景</span></div></div><div class="lockups"><h4>锁定组合预览</h4><div class="lockup"><svg viewBox="0 0 160 160"><use href="#mini-sentinel"/></svg><div><strong>苏州观象信息科技有限公司</strong><small>GUANGXIANG INFORMATION TECHNOLOGY</small></div></div><div class="lockup"><svg viewBox="0 0 160 160"><use href="#mini-sentinel"/></svg><div><strong>AI 视频安全智能体平台</strong><small>V8 VIDEO INTELLIGENCE PLATFORM</small></div></div></div></div>
+        <div class="specs"><div class="spec"><b>64 / 32 / 16</b><span>框角与勾形保留主动识别</span></div><div class="spec"><b>BEST FOR</b><span>安全产品、制造、园区、能源</span></div><div class="spec"><b>COLOR</b><span>#8B5CF6 · #22D3EE · #34D399</span></div><div class="spec"><b>CHARACTER</b><span>可靠、果断、先于风险</span></div></div>
+      </article>
+      <!-- D -->
+      <article class="concept" id="signal-eye">
+        <div class="concept-head"><div><div class="concept-index">D / 04</div><h3>Signal Eye · 信号之眼</h3><p class="concept-sub">用一只“会思考的眼睛”建立更强品牌记忆：外部是视觉信号，内部是镜核，尾部波形把数据流和反馈闭环带入图形。</p></div><div class="concept-tag">品牌叙事 / 识别优先</div></div>
+        <div class="showcase">
+          <div class="hero-mark"><svg viewBox="0 0 240 240" role="img" aria-label="Signal Eye 信号之眼渐变版"><defs><linearGradient id="gd" x1="25" y1="50" x2="215" y2="190"><stop stop-color="#f97316"/><stop offset=".45" stop-color="#22d3ee"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs><path d="M24 120c27-48 65-72 96-72 31 0 69 24 96 72-27 48-65 72-96 72-31 0-69-24-96-72Z" fill="none" stroke="url(#gd)" stroke-width="12" stroke-linejoin="round"/><circle cx="120" cy="120" r="45" fill="#081323" stroke="#22d3ee" stroke-width="8"/><circle cx="120" cy="120" r="18" fill="#f97316"/><circle cx="120" cy="120" r="7" fill="#fff"/><path d="M30 190h24l10-18 12 31 13-22h25m17 0h19l9-16 11 28 13-12h26" fill="none" stroke="#34d399" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="mark-label">SIGNAL IN / ACTION OUT</span></div>
+          <div class="variant-grid">
+            <div class="variant dark"><span class="variant-name">DARK / 160</span><svg viewBox="0 0 160 160"><path d="M16 79c18-32 43-48 64-48s46 16 64 48c-18 32-43 48-64 48S34 111 16 79Z" fill="none" stroke="#22d3ee" stroke-width="8" stroke-linejoin="round"/><circle cx="80" cy="79" r="30" fill="#0a0f1e" stroke="#8b5cf6" stroke-width="6"/><circle cx="80" cy="79" r="11" fill="#f97316"/><circle cx="80" cy="79" r="4" fill="#fff"/><path d="M20 136h16l7-12 8 20 9-14h17" fill="none" stroke="#34d399" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="variant light"><span class="variant-name">LIGHT / 160</span><svg viewBox="0 0 160 160"><path d="M16 79c18-32 43-48 64-48s46 16 64 48c-18 32-43 48-64 48S34 111 16 79Z" fill="none" stroke="#3b82f6" stroke-width="8" stroke-linejoin="round"/><circle cx="80" cy="79" r="30" fill="#f6fafc" stroke="#8b5cf6" stroke-width="6"/><circle cx="80" cy="79" r="11" fill="#f97316"/><circle cx="80" cy="79" r="4" fill="#0a0f1e"/><path d="M20 136h16l7-12 8 20 9-14h17" fill="none" stroke="#22b879" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="variant black"><span class="variant-name">BLACK / 1C</span><svg viewBox="0 0 160 160"><path d="M16 79c18-32 43-48 64-48s46 16 64 48c-18 32-43 48-64 48S34 111 16 79Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="round"/><circle cx="80" cy="79" r="30" fill="white" stroke="currentColor" stroke-width="6"/><circle cx="80" cy="79" r="11" fill="currentColor"/><path d="M20 136h16l7-12 8 20 9-14h17" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="variant white"><span class="variant-name white-note">WHITE / 1C</span><svg viewBox="0 0 160 160"><path d="M16 79c18-32 43-48 64-48s46 16 64 48c-18 32-43 48-64 48S34 111 16 79Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="round"/><circle cx="80" cy="79" r="30" fill="none" stroke="currentColor" stroke-width="6"/><circle cx="80" cy="79" r="11" fill="currentColor"/><path d="M20 136h16l7-12 8 20 9-14h17" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+        </div>
+        <div class="detail"><div class="detail-copy"><h4>设计逻辑</h4><p>眼形带来强记忆点，镜核让它不是拟人化装饰，而是一个持续采集、判断、反馈的视觉智能节点。底部波形可延展成动效和数据纹理。</p><div class="keywords"><span class="keyword">品牌记忆</span><span class="keyword">信号流</span><span class="keyword">摄像头之眼</span><span class="keyword">数据反馈</span></div></div><div class="lockups"><h4>锁定组合预览</h4><div class="lockup"><svg viewBox="0 0 160 160"><use href="#mini-eye"/></svg><div><strong>苏州观象信息科技有限公司</strong><small>GUANGXIANG INFORMATION TECHNOLOGY</small></div></div><div class="lockup"><svg viewBox="0 0 160 160"><use href="#mini-eye"/></svg><div><strong>AI 视频安全智能体平台</strong><small>V8 VIDEO INTELLIGENCE PLATFORM</small></div></div></div></div>
+        <div class="specs"><div class="spec"><b>64 / 32 / 16</b><span>眼形和中心瞳孔保持识别</span></div><div class="spec"><b>BEST FOR</b><span>公司母标、品牌传播、内容动效</span></div><div class="spec"><b>COLOR</b><span>#F97316 · #22D3EE · #8B5CF6 · #34D399</span></div><div class="spec"><b>CHARACTER</b><span>敏锐、聪明、有温度</span></div></div>
+      </article>
+    </div>
+  </section>
+  <section class="footer"><div class="footer-note"><strong>使用说明：</strong>这是独立的本地预览页，当前没有替换 V8 页面中的正式 Logo 资产。直接用浏览器打开本文件即可比较四个方向；选定方向后，再继续制作正式的 mark、公司锁定版、产品锁定版和 favicon。</div></section>
+</main>
+<!-- Reusable monochrome lockup symbols. The large presentations above remain independently editable SVGs. -->
+<svg class="sr-only" aria-hidden="true" width="0" height="0" viewBox="0 0 160 160">
+  <defs>
+    <symbol id="mini-loop" viewBox="0 0 160 160"><path d="M60 18H45c-15 0-27 12-27 27v15M100 18h15c15 0 27 12 27 27v15M142 100v15c0 15-12 27-27 27h-15M60 142H45c-15 0-27-12-27-27v-15" fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="round"/><circle cx="80" cy="80" r="30" fill="none" stroke="currentColor" stroke-width="6"/><circle cx="80" cy="80" r="10" fill="currentColor"/><path d="M111 111l28 28m0 0h-20m20 0v-20" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="mini-lens" viewBox="0 0 160 160"><rect x="19" y="19" width="122" height="122" rx="28" fill="none" stroke="currentColor" stroke-width="8"/><rect x="35" y="35" width="90" height="90" rx="20" fill="none" stroke="currentColor" stroke-width="7" transform="rotate(45 80 80)"/><rect x="52" y="52" width="56" height="56" rx="11" fill="none" stroke="currentColor" stroke-width="6"/><circle cx="80" cy="80" r="7" fill="currentColor"/></symbol>
+    <symbol id="mini-sentinel" viewBox="0 0 160 160"><path d="M48 18H35c-9 0-17 8-17 17v14M112 18h13c9 0 17 8 17 17v14M142 112v13c0 9-8 17-17 17h-13M48 142H35c-9 0-17-8-17-17v-13" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/><path d="M80 34l42 17v31c0 29-18 47-42 60-24-13-42-31-42-60V51l42-17Z" fill="none" stroke="currentColor" stroke-width="6"/><path d="M61 81l13 13 26-29" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="mini-eye" viewBox="0 0 160 160"><path d="M16 79c18-32 43-48 64-48s46 16 64 48c-18 32-43 48-64 48S34 111 16 79Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="round"/><circle cx="80" cy="79" r="30" fill="none" stroke="currentColor" stroke-width="6"/><circle cx="80" cy="79" r="11" fill="currentColor"/><path d="M20 136h16l7-12 8 20 9-14h17" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+<script>
+  (function () {
+    const root = document.documentElement;
+    const button = document.getElementById('theme-toggle');
+    const saved = localStorage.getItem('v8-logo-preview-theme');
+    if (saved === 'dark') root.dataset.theme = 'dark';
+    function updateLabel() { button.textContent = root.dataset.theme === 'dark' ? '切换浅色' : '切换深色'; }
+    updateLabel();
+    button.addEventListener('click', function () {
+      if (root.dataset.theme === 'dark') { delete root.dataset.theme; localStorage.removeItem('v8-logo-preview-theme'); }
+      else { root.dataset.theme = 'dark'; localStorage.setItem('v8-logo-preview-theme', 'dark'); }
+      updateLabel();
+    });
+  }());
+</script>
+</body>
+</html>
