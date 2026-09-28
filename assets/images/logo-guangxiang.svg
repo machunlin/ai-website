@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 96" role="img" aria-labelledby="title desc">
+  <title id="title">苏州观象信息科技有限公司</title>
+  <desc id="desc">白色单色 Signal Eye 信号之眼公司 Logo</desc>
+  <g transform="translate(8 8) scale(.5)">
+    <path d="M16 80C34 48 59 32 80 32s46 16 64 48c-18 32-43 48-64 48S34 112 16 80Z"
+          fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linejoin="round"/>
+    <circle cx="80" cy="80" r="31" fill="none" stroke="#FFFFFF" stroke-width="8"/>
+    <circle cx="80" cy="80" r="12" fill="#FFFFFF"/>
+    <path d="M24 135h17l7-12 9 23 10-17h19m9 0h16l8-14 10 25 11-10h15"
+          fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="104" y="45" fill="#FFFFFF" font-family="PingFang SC,Hiragino Sans GB,Microsoft YaHei,sans-serif" font-size="22" font-weight="700">苏州观象信息科技有限公司</text>
+  <text x="105" y="68" fill="#A7B5C8" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10" font-weight="500" letter-spacing="1.5">GUANGXIANG INFORMATION TECHNOLOGY</text>
+</svg>

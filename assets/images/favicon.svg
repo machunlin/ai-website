@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">观象 Signal Eye</title>
+  <desc id="desc">白色单色观象信号之眼图标</desc>
+  <rect width="64" height="64" rx="16" fill="#0A0F1E"/>
+  <path d="M8 31C16 18 25 12 32 12s16 6 24 19c-8 13-17 19-24 19S16 44 8 31Z"
+        fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linejoin="round"/>
+  <circle cx="32" cy="31" r="12" fill="none" stroke="#FFFFFF" stroke-width="3"/>
+  <circle cx="32" cy="31" r="5" fill="#FFFFFF"/>
+  <path d="M12 54h9l4-7 5 10 5-7h7m3 0h6l4-6 4 8h5"
+        fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

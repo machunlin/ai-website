@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">观象 Signal Eye 信号之眼</title>
+  <desc id="desc">白色单色 Signal Eye 信号之眼 Logo 图形</desc>
+  <path d="M16 80C34 48 59 32 80 32s46 16 64 48c-18 32-43 48-64 48S34 112 16 80Z"
+        fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linejoin="round"/>
+  <circle cx="80" cy="80" r="31" fill="none" stroke="#FFFFFF" stroke-width="8"/>
+  <circle cx="80" cy="80" r="12" fill="#FFFFFF"/>
+  <path d="M24 135h17l7-12 9 23 10-17h19m9 0h16l8-14 10 25 11-10h15"
+        fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
