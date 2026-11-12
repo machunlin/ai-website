@@ -3,188 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>实验室 SOP 智能监管 — AI 视频安全智能体平台</title>
-<meta name="description" content="面向高校、企业研发与检测实验室的 AI SOP 智能监管方案。通过目标检测、时序行为识别、VLM 辅助理解与 SOP 规则引擎，识别实验流程偏差并形成处置闭环。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="实验室 SOP 智能监管 — AI 视频安全智能体平台">
-<meta property="og:description" content="让 AI 看懂实验过程，实时识别操作偏差，保障实验安全与流程合规。">
-<meta property="og:image" content="https://images.pexels.com/videos/4121351/free-video-4121351.jpg?auto=compress&cs=tinysrgb&w=1600">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="robots" content="index,follow">
-<link rel="stylesheet" href="../styles.css">
-<link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://images.pexels.com">
-<link rel="preconnect" href="https://videos.pexels.com">
+<title>实验室主动式 SOP 合规监管平台 | 观象科技</title>
+<meta name="description" content="将 SOP 转化为结构化监管规则，结合视频 AI 与设备数据，对实验过程进行持续感知、合规判断、主动预警与全过程追溯。">
+<style>
+:root{--bg:#06111f;--bg2:#09192b;--card:#0b1d31;--line:rgba(111,170,211,.18);--text:#f1f6fb;--muted:#9eb2c7;--cyan:#40d6ff;--cyan2:#77b9ff;--green:#34d399;--amber:#f6b74a;--red:#ff5f72;--max:1180px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Arial,sans-serif;line-height:1.65}
+a{color:inherit;text-decoration:none}.container{width:min(calc(100% - 48px),var(--max));margin:auto}.nav{position:fixed;inset:0 0 auto;z-index:20;height:68px;background:rgba(6,17,31,.76);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.nav-in{height:100%;display:flex;align-items:center;justify-content:space-between;gap:28px}.brand{font-weight:750;letter-spacing:.01em}.brand b{color:var(--cyan)}.nav-links{display:flex;gap:24px;color:#c3d0dc;font-size:14px}.nav-links a:hover{color:#fff}.nav-cta{padding:9px 16px;border:1px solid rgba(64,214,255,.55);border-radius:8px;color:var(--cyan);font-size:13px}
+.hero{min-height:720px;position:relative;overflow:hidden;display:flex;align-items:center;background:#06111f}.hero video,.hero .fallback,.hero:after{position:absolute;inset:0;width:100%;height:100%}.hero video{object-fit:cover;opacity:.48}.hero .fallback{background:url("../assets/images/personnel-hero.jpg") center/cover no-repeat;opacity:.16}.hero:after{content:"";background:linear-gradient(90deg,rgba(4,12,23,.97),rgba(4,12,23,.82) 48%,rgba(4,12,23,.28)),linear-gradient(0deg,rgba(4,12,23,.75),transparent 55%)}.hero-grid{position:absolute;inset:0;opacity:.18;background-image:linear-gradient(rgba(64,214,255,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(64,214,255,.14) 1px,transparent 1px);background-size:52px 52px;mask-image:linear-gradient(90deg,#000,transparent 86%);z-index:1}.hero-in{position:relative;z-index:2;padding-top:120px;padding-bottom:70px;max-width:760px}.crumb{font-size:13px;color:#9eb2c7;margin-bottom:46px}.crumb span{margin:0 9px;color:#52677d}.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--cyan);font-size:12px;font-weight:800;letter-spacing:.16em}.pulse{width:8px;height:8px;background:var(--green);border-radius:50%;box-shadow:0 0 18px var(--green)}h1{font-size:clamp(46px,6vw,78px);line-height:1.05;letter-spacing:-.045em;margin:18px 0 22px}.grad{background:linear-gradient(90deg,#fff 5%,var(--cyan));-webkit-background-clip:text;color:transparent}.hero p{max-width:680px;color:#d4e0eb;font-size:18px;margin:0}.actions{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}.btn{padding:12px 20px;border-radius:8px;font-weight:650;font-size:14px}.primary{background:var(--cyan);color:#032034}.ghost{border:1px solid rgba(255,255,255,.22);color:#fff}.hero-points{display:flex;gap:22px;flex-wrap:wrap;margin-top:40px;color:#c5d7e7;font-size:13px}.hero-points span{padding-left:13px;border-left:2px solid var(--cyan)}
+section{padding:92px 0}.section-dark{background:linear-gradient(180deg,#081728,#06111f)}.kicker{font-size:11px;color:var(--cyan);font-weight:800;letter-spacing:.15em}.section-title{font-size:clamp(30px,4vw,46px);line-height:1.18;letter-spacing:-.03em;margin:13px 0 12px}.section-desc{max-width:720px;color:var(--muted);margin:0}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:38px}.pain{padding:24px;border:1px solid var(--line);border-radius:14px;background:rgba(13,31,51,.68)}.num{font-size:11px;color:var(--cyan);font-weight:800;letter-spacing:.12em}.pain h3{font-size:17px;margin:17px 0 8px}.pain p{font-size:13px;color:var(--muted);margin:0}
+.process{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:40px}.step{padding:20px 17px;min-height:222px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(145deg,rgba(15,38,63,.78),rgba(7,20,35,.86))}.step .icon{font-size:25px;color:var(--cyan);margin:17px 0}.step h3{font-size:17px;margin:0 0 8px}.step p{font-size:12.5px;color:var(--muted);margin:0}
+.feature{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:42px}.feature-card{overflow:hidden;border:1px solid var(--line);border-radius:16px;background:var(--card);min-height:260px;display:grid;grid-template-columns:42% 1fr}.feature-card img{width:100%;height:100%;object-fit:cover}.feature-copy{padding:26px}.feature-copy h3{font-size:20px;margin:10px 0}.feature-copy p{font-size:13px;color:var(--muted);margin:0}
+.lifecycle{display:grid;grid-template-columns:.9fr 1.1fr;gap:58px;align-items:center}.checklist{list-style:none;padding:0;margin:26px 0 0}.checklist li{padding:10px 0 10px 28px;color:#c6d4e0;font-size:14px;position:relative}.checklist li:before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:800}.timeline{padding:20px;border:1px solid var(--line);border-radius:16px;background:var(--card)}.t-row{display:grid;grid-template-columns:46px 1fr auto;gap:14px;padding:16px 8px;border-bottom:1px solid var(--line);align-items:center}.t-row:last-child{border:0}.t-row b{font-size:12px;color:var(--cyan)}.t-row strong,.t-row small{display:block}.t-row small{font-size:12px;color:var(--muted);margin-top:4px}.tag{font-size:10px;color:#7790a8;letter-spacing:.08em}.published{background:rgba(52,211,153,.07);border-radius:10px}.published .tag{color:var(--green)}
+.monitor{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;margin-top:40px}.monitor-visual{position:relative;min-height:410px;overflow:hidden;border:1px solid var(--line);border-radius:18px;background:#06111f}.monitor-visual img{width:100%;height:100%;object-fit:cover;opacity:.84}.overlay-card{position:absolute;right:18px;top:18px;width:min(280px,70%);padding:14px;border:1px solid rgba(64,214,255,.35);border-radius:12px;background:rgba(5,18,34,.83);backdrop-filter:blur(10px)}.overlay-card .ok{color:var(--green);font-size:12px}.overlay-card .warn{margin-top:9px;padding:9px;background:rgba(246,183,74,.1);border-left:2px solid var(--amber);font-size:12px}.overlay-label{position:absolute;left:16px;bottom:16px;padding:8px 12px;background:rgba(4,13,25,.78);border-radius:8px;font-size:11px;color:#c5d8e8}.alert-list{display:grid;gap:11px}.alert{padding:17px;border:1px solid var(--line);border-radius:12px;background:var(--card);display:flex;gap:15px}.alert b{color:var(--cyan);font-size:12px}.alert strong,.alert small{display:block}.alert small{font-size:12px;color:var(--muted);margin-top:5px}
+.tech{display:grid;gap:10px;max-width:900px;margin:40px auto 0;text-align:center}.tech .layer{padding:20px;border:1px solid var(--line);border-radius:12px;background:var(--card)}.tech b,.tech span{display:block}.tech span{font-size:13px;color:var(--muted);margin-top:6px}.arrow{color:var(--cyan);font-size:20px}
+.scene{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:36px}.scene-card{padding:22px;border:1px solid var(--line);border-radius:14px;background:var(--card)}.scene-card h3{font-size:17px;margin:14px 0 8px}.scene-card p{font-size:13px;color:var(--muted);margin:0}.disclaimer{font-size:12px;color:#73889e;line-height:1.8;margin-top:24px;border-top:1px solid var(--line);padding-top:20px}.cta{padding:42px;background:linear-gradient(105deg,rgba(18,78,107,.85),rgba(13,31,62,.92));border:1px solid rgba(64,214,255,.25);border-radius:18px;display:flex;justify-content:space-between;gap:30px;align-items:center}.cta h2{margin:0 0 8px;font-size:28px}.cta p{margin:0;color:#b9c9d8}.footer{padding:38px 0;color:#71869a;font-size:12px;border-top:1px solid var(--line)}
+@media(max-width:950px){.grid4{grid-template-columns:repeat(2,1fr)}.process{grid-template-columns:repeat(3,1fr)}.feature,.monitor,.lifecycle{grid-template-columns:1fr}.scene{grid-template-columns:repeat(2,1fr)}.feature-card{min-height:220px}}@media(max-width:620px){.container{width:min(calc(100% - 32px),var(--max))}.nav-links{display:none}.nav-cta{display:none}.hero{min-height:670px}.hero-in{padding-top:105px}.crumb{margin-bottom:30px}.hero p{font-size:15px}.grid4,.process,.scene{grid-template-columns:1fr}.feature-card{grid-template-columns:1fr}.feature-card img{height:190px}.cta{flex-direction:column;align-items:flex-start}.overlay-card{width:75%}section{padding:65px 0}}
+</style>
 </head>
-<body data-page="solutions">
-<nav class="nav">
-  <div class="container nav-inner">
-    <a href="../index.html" class="nav-logo"><span class="nav-logo-icon"><img src="../assets/images/logo-guangxiang-mark.svg" alt="观象" width="34" height="34"></span>AI 视频安全智能体平台</a>
-    <ul class="nav-links">
-      <li><a href="../index.html#compare" data-nav="compare">平台对比</a></li>
-      <li><a href="../index.html#values" data-nav="values">核心价值</a></li>
-      <li><a href="../index.html#scenarios" data-nav="scenarios">场景全景</a></li>
-      <li><a href="solutions.html" data-page="solutions">行业方案</a></li>
-      <li><a href="architecture.html" data-page="architecture">平台架构</a></li>
-      <li><a href="technology.html" data-page="technology">技术亮点</a></li>
-    </ul>
-    <a href="contact.html" class="nav-cta">联系我们</a>
-    <button class="nav-toggle" aria-label="菜单"><span></span><span></span><span></span></button>
-  </div>
-  <div class="nav-mobile">
-    <a href="../index.html#compare">平台对比</a><a href="../index.html#values">核心价值</a><a href="../index.html#scenarios">场景全景</a>
-    <a href="solutions.html">行业方案</a><a href="../index.html#scenarios">应用场景</a><a href="architecture.html">平台架构</a><a href="technology.html">技术亮点</a><a href="contact.html">联系我们</a>
-  </div>
-</nav>
-
-<header class="lab-hero">
-  <video class="lab-hero-video" autoplay muted loop playsinline preload="metadata" poster="https://images.pexels.com/videos/4121351/free-video-4121351.jpg?auto=compress&cs=tinysrgb&w=1800">
-    <source src="https://www.pexels.com/download/video/4121351/" type="video/mp4">
-  </video>
-  <div class="lab-hero-shade"></div>
-  <div class="lab-hero-grid"></div>
-  <div class="container lab-hero-content">
-    <div class="breadcrumb"><a href="../index.html">首页</a><span class="sep">/</span><a href="../index.html#scenarios">应用场景</a><span class="sep">/</span><span>实验室 SOP</span></div>
-    <span class="lab-eyebrow"><span class="lab-pulse"></span> LABORATORY SOP COMPLIANCE</span>
-    <h1>实验室 SOP<br><span class="grad">智能监管</span></h1>
-    <p>让 AI 看懂实验过程，实时识别操作偏差。把标准操作规程转化为可理解、可判断、可追溯的智能监管流程。</p>
-    <div class="lab-hero-actions">
-      <a class="btn btn-primary" href="contact.html">预约产品演示</a>
-      <a class="btn btn-ghost" href="#lab-workflow">了解工作流程</a>
-    </div>
-    <div class="lab-hero-points"><span>实验步骤识别</span><span>操作顺序校验</span><span>异常行为告警</span><span>过程记录追溯</span></div>
-  </div>
-  <a class="lab-video-credit" href="https://www.pexels.com/zh-cn/video/4121351/" target="_blank" rel="noopener noreferrer">视频素材：Pexels · 4121351</a>
-</header>
-
+<body>
+<nav class="nav"><div class="container nav-in"><a class="brand" href="../index.html"><b>AI</b> 视频安全智能体平台</a><div class="nav-links"><a href="#value">核心价值</a><a href="#process">工作流程</a><a href="#capabilities">核心能力</a><a href="#technology">技术架构</a></div><a class="nav-cta" href="#contact">预约产品演示</a></div></nav>
+<header class="hero"><div class="fallback"></div><video autoplay muted loop playsinline preload="metadata" poster="../assets/images/personnel-poster.jpg"><source src="https://www.pexels.com/download/video/4121351/" type="video/mp4"></video><div class="hero-grid"></div><div class="container hero-in"><div class="crumb">首页 <span>/</span> 应用场景 <span>/</span> 实验室 SOP</div><div class="eyebrow"><i class="pulse"></i> LABORATORY SOP COMPLIANCE</div><h1>让 SOP 真正进入<br><span class="grad">每一次实验</span></h1><p>将 SOP 转化为结构化监管规则，结合视频 AI 与设备数据，对实验过程进行持续感知、合规判断、主动预警与全过程追溯。</p><div class="actions"><a class="btn primary" href="#contact">预约产品演示</a><a class="btn ghost" href="#process">了解工作流程</a></div><div class="hero-points"><span>主动感知</span><span>主动判断</span><span>主动预警</span><span>全程可追溯</span></div></div></header>
 <main>
-<section class="section lab-intro">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="section-eyebrow">WHY LAB SOP</span>
-      <h2 class="section-title">实验室需要的不只是视频监控</h2>
-      <p class="section-sub">传统监控能够记录实验过程，却难以判断实验是否按照标准流程执行。</p>
-    </div>
-    <div class="lab-pain-grid reveal-stagger">
-      <article class="lab-pain-card"><div class="lab-pain-icon">01</div><h3>执行依赖人员记忆</h3><p>复杂 SOP 步骤多、要求细，实验人员容易遗漏关键动作或忽略先后顺序。</p></article>
-      <article class="lab-pain-card"><div class="lab-pain-icon">02</div><h3>过程偏差难以及时发现</h3><p>操作遗漏、工具误用、步骤跳过等问题，通常在实验结束后才被发现。</p></article>
-      <article class="lab-pain-card"><div class="lab-pain-icon">03</div><h3>传统监控缺乏流程理解</h3><p>摄像头能看到人员和设备，但无法直接判断当前操作对应哪一个 SOP 步骤。</p></article>
-      <article class="lab-pain-card"><div class="lab-pain-icon">04</div><h3>审计追溯成本高</h3><p>缺少结构化的过程事件、异常证据和处置记录，复盘与合规检查依赖人工。</p></article>
-    </div>
-  </div>
-</section>
-
-<section class="section lab-workflow" id="lab-workflow">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="section-eyebrow">HOW IT WORKS</span>
-      <h2 class="section-title">从视频感知到 SOP 合规闭环</h2>
-      <p class="section-sub">AI 在后台持续观察实验过程，实验人员按原有习惯自主操作，无需逐步点击确认。</p>
-    </div>
-    <div class="lab-flow-grid reveal-stagger">
-      <article class="lab-flow-card"><span>01 / SEE</span><div class="lab-flow-symbol">◉</div><h3>视觉感知</h3><p>采集实验区域视频，识别人员、实验器材、试剂容器和操作对象。</p></article>
-      <article class="lab-flow-card"><span>02 / UNDERSTAND</span><div class="lab-flow-symbol">⌕</div><h3>过程理解</h3><p>结合目标检测与时序行为识别，分析动作、对象关系和操作先后。</p></article>
-      <article class="lab-flow-card"><span>03 / ASSESS</span><div class="lab-flow-symbol">✓</div><h3>SOP 校验</h3><p>对照已审核发布的 SOP，判断当前步骤、必要动作和执行状态。</p></article>
-      <article class="lab-flow-card"><span>04 / RESPOND</span><div class="lab-flow-symbol">↗</div><h3>异常响应</h3><p>按风险等级提醒实验人员、通知负责人，并保存事件证据。</p></article>
-      <article class="lab-flow-card"><span>05 / IMPROVE</span><div class="lab-flow-symbol">↻</div><h3>持续改进</h3><p>沉淀步骤执行情况、异常分布和处置结果，辅助 SOP 优化。</p></article>
-    </div>
-  </div>
-</section>
-
-<section class="section lab-capabilities">
-  <div class="container">
-    <div class="section-head reveal"><span class="section-eyebrow">CORE CAPABILITIES</span><h2 class="section-title">覆盖实验室关键监管环节</h2><p class="section-sub">从人员安全到实验步骤，从现场异常到过程审计。</p></div>
-    <div class="lab-cap-grid">
-      <article class="lab-cap-card"><img src="https://www.unmc.edu/gradstudies/_images/professional-idp-intruder1.jpg" alt="科研人员在生物安全柜内进行移液操作" loading="lazy"><div class="lab-cap-copy"><span>01 / PEOPLE & PPE</span><h3>人员与安全合规</h3><p>实验服、护目镜、手套等 PPE 穿戴识别；危险区域进入和异常人员行为监测。</p></div></article>
-      <article class="lab-cap-card"><img src="https://cemm.at/fileadmin/_processed_/0/5/csm_Felix_Kaertnig_OEAW_CeMM_edited_14f68ff924.jpg" alt="科研人员在生物安全柜内使用移液器" loading="lazy"><div class="lab-cap-copy"><span>02 / SOP EXECUTION</span><h3>SOP 步骤与操作监管</h3><p>识别实验步骤、操作顺序、必要动作遗漏，以及器材和工具的使用规范。</p></div></article>
-      <article class="lab-cap-card"><img src="https://bibliothek.univie.ac.at/images/front-forschung.jpg" alt="科研人员在实验台前进行样本处理" loading="lazy"><div class="lab-cap-copy"><span>03 / LAB ENVIRONMENT</span><h3>实验环境与风险监测</h3><p>识别可视范围内的烟雾、明火、泄漏迹象和区域异常，并可融合环境传感器数据。</p></div></article>
-      <article class="lab-cap-card"><img src="https://www.gbiowit.com/images/3.jpg" alt="实验室研究人员进行样本制备" loading="lazy"><div class="lab-cap-copy"><span>04 / TRACEABILITY</span><h3>实验记录与合规追溯</h3><p>记录实验时间线、步骤状态、异常截图、处置过程和负责人确认结果。</p></div></article>
-    </div>
-  </div>
-</section>
-
-<section class="section lab-sop-config">
-  <div class="container lab-config-layout">
-    <div class="lab-config-copy reveal">
-      <span class="section-eyebrow">SOP LIFECYCLE</span>
-      <h2 class="section-title">把 SOP 文档转化为可执行的监管规则</h2>
-      <p class="section-sub">采用「AI 辅助解析 + 人工审核 + 结构化发布」。AI 提高配置效率，实验室负责人保留最终审核权。</p>
-      <ul class="lab-check-list">
-        <li>支持 PDF / Word 等 SOP 文档导入</li>
-        <li>提取实验步骤、操作对象、前置条件与风险点</li>
-        <li>将步骤转化为状态、时序关系和判断规则</li>
-        <li>人工审核后发布版本，保留变更记录</li>
-      </ul>
-    </div>
-    <div class="lab-sop-steps reveal">
-      <div class="lab-sop-step"><b>01</b><div><strong>文档导入</strong><small>上传现有 SOP 文件</small></div><em>PDF / DOCX</em></div>
-      <div class="lab-sop-step"><b>02</b><div><strong>AI 辅助解析</strong><small>提取步骤、对象、动作与约束</small></div><em>AI PARSE</em></div>
-      <div class="lab-sop-step"><b>03</b><div><strong>人工审核</strong><small>负责人确认步骤和监管条件</small></div><em>REVIEW</em></div>
-      <div class="lab-sop-step is-published"><b>04</b><div><strong>结构化发布</strong><small>形成可执行的 SOP 版本</small></div><em>PUBLISHED</em></div>
-      <div class="lab-sop-step"><b>05</b><div><strong>AI 实时监管</strong><small>后台识别步骤与流程偏差</small></div><em>MONITOR</em></div>
-    </div>
-  </div>
-</section>
-
-<section class="section lab-alerts">
-  <div class="container">
-    <div class="section-head reveal"><span class="section-eyebrow">ALERT & TRACE</span><h2 class="section-title">异常发现后，形成可追溯的处置闭环</h2><p class="section-sub">以实验 SOP 要求为判断依据，将异常步骤、现场证据和后续处置关联起来。</p></div>
-    <div class="lab-alert-layout">
-      <div class="lab-alert-example reveal">
-        <div class="lab-alert-top"><span class="lab-alert-dot"></span> SOP 执行异常示例 <b>DEMO</b></div>
-        <div class="lab-alert-body"><div class="lab-alert-status">流程偏差 · 待确认</div><h3>疑似跳过混匀步骤</h3><p>当前流程：试剂 A 加入完成后，应先执行混匀，再进入下一步骤。系统观察到操作顺序可能不符合 SOP。</p><div class="lab-alert-meta"><span>实验步骤：03 / 05</span><span>风险等级：一般偏差</span></div></div>
-      </div>
-      <div class="lab-response-list">
-        <div><b>01</b><span><strong>提醒实验人员</strong><small>现场提示当前步骤要求，允许人员自主确认和纠正。</small></span></div>
-        <div><b>02</b><span><strong>通知实验室负责人</strong><small>达到设定风险条件时，推送异常摘要和现场证据。</small></span></div>
-        <div><b>03</b><span><strong>保存事件记录</strong><small>关联时间戳、视频片段、SOP 版本、识别结果和处置记录。</small></span></div>
-        <div><b>04</b><span><strong>复盘与持续改进</strong><small>统计高频偏差，为培训和 SOP 修订提供依据。</small></span></div>
-      </div>
-    </div>
-    <p class="lab-disclaimer">说明：视觉模型仅对摄像头可观察到的行为作出判断。试剂实际成分、浓度、内部反应状态等不可见信息，应结合仪器数据或传感器进行验证；高风险处置应保留人工复核机制。</p>
-  </div>
-</section>
-
-<section class="section lab-architecture">
-  <div class="container">
-    <div class="section-head reveal"><span class="section-eyebrow">TECHNOLOGY</span><h2 class="section-title">多模型协同，不让单一 VLM 承担实时判定</h2><p class="section-sub">目标检测、时序行为识别、VLM 辅助理解与确定性规则共同完成 SOP 判断。</p></div>
-    <div class="lab-tech-stack reveal">
-      <div><b>数据采集层</b><span>网络摄像头 · 实验设备 · 环境传感器</span></div>
-      <i>↓</i>
-      <div><b>AI 视觉理解层</b><span>目标检测 · 时序行为识别 · VLM 辅助理解</span></div>
-      <i>↓</i>
-      <div><b>SOP 智能监管层</b><span>结构化 SOP · 步骤状态机 · 规则引擎 · 风险评估</span></div>
-      <i>↓</i>
-      <div><b>Agent 执行层</b><span>现场提醒 · 分级告警 · 事件记录 · 报告追溯</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="section lab-industries">
-  <div class="container">
-    <div class="section-head reveal"><span class="section-eyebrow">FOR LABORATORIES</span><h2 class="section-title">适用于多类型实验室</h2></div>
-    <div class="lab-industry-grid">
-      <div><span>01</span><h3>高校科研实验室</h3><p>实验教学、科研操作规范、安全管理。</p></div>
-      <div><span>02</span><h3>企业研发中心</h3><p>研发实验流程、关键步骤执行和过程追溯。</p></div>
-      <div><span>03</span><h3>检测分析实验室</h3><p>检测流程规范、样本处理和质量审计。</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section lab-final-cta">
-  <div class="container"><div class="cta-strip reveal"><div class="cta-strip-content"><h3>让实验过程可理解、可监管、可追溯</h3><p>结合现有摄像头与实验室 SOP，构建适合实际流程的智能监管方案。</p></div><a href="contact.html" class="btn btn-light">预约产品演示</a></div></div>
-</section>
-</main>
-
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-col"><div class="footer-logo"><span class="nav-logo-icon"><img src="../assets/images/logo-guangxiang-mark.svg" alt="观象" width="34" height="34"></span>苏州观象信息科技有限公司</div><p style="font-size:13px;color:var(--text-3);line-height:1.6">AI 视频安全智能体平台，让每一个摄像头成为会思考的安全智能体。</p></div>
-    <div class="footer-col"><h5>产品</h5><a href="solutions.html">行业方案</a><a href="architecture.html">平台架构</a><a href="technology.html">技术亮点</a></div>
-    <div class="footer-col"><h5>联系</h5><a href="contact.html">联系我们</a><a href="../index.html#scenarios">场景全景</a></div>
-  </div>
-  <div class="footer-copy">视频素材来源：Pexels（4121351）。图片来源及授权说明见项目 MEDIA-SOURCES.md。© 2026 苏州观象信息科技有限公司</div>
-</footer>
-<script src="../analytics.js" defer></script>
-<script src="../script.js"></script>
-</body>
-</html>
+<section id="value"><div class="container"><div class="kicker">WHY ACTIVE SOP</div><h2 class="section-title">从“有 SOP”走向“主动合规”</h2><p class="section-desc">实验室通常并不缺少操作规程，真正的挑战在于确保 SOP 在每一次实验过程中得到执行，并及时发现偏差。平台不是再增加一套录像系统，而是让现有监控具备理解实验流程、发现操作偏差和推动风险处置的能力。</p><div class="grid4"><article class="pain"><div class="num">01 / SOP</div><h3>SOP 落地难</h3><p>规程以文档为主，执行情况依赖人员自觉和抽查。</p></article><article class="pain"><div class="num">02 / ON SITE</div><h3>现场监管难</h3><p>人工巡检存在时间与空间盲区，无法持续覆盖所有区域。</p></article><article class="pain"><div class="num">03 / PROCESS</div><h3>操作过程难判断</h3><p>普通视频监控主要记录画面，缺少 SOP 业务语义。</p></article><article class="pain"><div class="num">04 / CLOSED LOOP</div><h3>异常处置难闭环</h3><p>发现、确认、整改、复核和追溯分散在不同环节。</p></article></div></div></section>
+<section class="section-dark" id="process"><div class="container"><div class="kicker">ONE PLATFORM · FULL PROCESS</div><h2 class="section-title">一个平台，覆盖 SOP 合规监管全过程</h2><p class="section-desc">从 SOP 数字化开始，到 AI 感知、合规判断、主动预警和闭环追溯，形成完整监管链路。</p><div class="process"><article class="step"><div class="num">01 / DIGITALIZE</div><div class="icon">⌘</div><h3>SOP 数字化</h3><p>文档解析、人工审核，将静态制度转化为结构化监管标准。</p></article><article class="step"><div class="num">02 / PERCEIVE</div><div class="icon">◉</div><h3>AI 感知</h3><p>识别人员、PPE、器具、设备和可观测操作行为。</p></article><article class="step"><div class="num">03 / ASSESS</div><div class="icon">✓</div><h3>合规判断</h3><p>关联 AI 感知结果与正式 SOP，检查步骤和前置条件。</p></article><article class="step"><div class="num">04 / ALERT</div><div class="icon">!</div><h3>主动预警</h3><p>依据风险等级、可信度和异常持续时间执行分级策略。</p></article><article class="step"><div class="num">05 / TRACE</div><div class="icon">↻</div><h3>闭环追溯</h3><p>关联任务、SOP 版本、事件、处置记录和视频证据。</p></article></div></div></section>
+<section id="capabilities"><div class="container"><div class="kicker">CORE CAPABILITIES</div><h2 class="section-title">围绕实验过程，构建五项核心能力</h2><div class="feature"><article class="feature-card"><img src="../assets/images/personnel-det1.jpg" alt="实验室 SOP 平台"><div class="feature-copy"><div class="num">01 / SOP PARSE</div><h3>SOP 智能解析与结构化管理</h3><p>支持 PDF、Word 或扫描版 SOP，辅助提取实验步骤、前置条件、操作要求和风险提示；经专业人员审核后发布正式版本。</p></div></article><article class="feature-card"><img src="../assets/images/personnel-det2.jpg" alt="实验室 PPE 监管"><div class="feature-copy"><div class="num">02 / AI VISION</div><h3>AI 视觉感知与行为识别</h3><p>接入现有网络摄像头，识别人员、实验服、护目镜、手套、器具、设备及连续操作行为。</p></div></article><article class="feature-card"><img src="../assets/images/school-det1.jpg" alt="实验 SOP 执行监管"><div class="feature-copy"><div class="num">03 / ACTIVE CHECK</div><h3>SOP 执行过程主动监管</h3><p>检查必须执行的操作、实验步骤顺序、前置条件以及操作持续时间，并支持视频与设备数据联合校验。</p></div></article><article class="feature-card"><img src="../assets/images/school-det2.jpg" alt="实验室环境风险预警"><div class="feature-copy"><div class="num">04 / RISK LOOP</div><h3>风险分级预警与事件闭环</h3><p>综合 SOP 风险等级、识别可信度和异常持续时间，形成提示、一般、严重、紧急等分级处置策略。</p></div></article></div></div></section>
+<section class="section-dark"><div class="container lifecycle"><div><div class="kicker">SOP LIFECYCLE</div><h2 class="section-title">把静态制度文件，转化为可执行的数字化监管标准</h2><p class="section-desc">AI 提高 SOP 解析和配置效率，实验室专业人员保留审核权和发布权，确保正式 SOP 始终是监管判断依据。</p><ul class="checklist"><li>多格式 SOP 文档解析</li><li>实验步骤、操作要求和风险点提取</li><li>监管规则结构化配置</li><li>人工审核、版本发布与变更留痕</li></ul></div><div class="timeline"><div class="t-row"><b>01</b><span><strong>文档导入</strong><small>PDF、Word 或扫描版 SOP</small></span><em class="tag">IMPORT</em></div><div class="t-row"><b>02</b><span><strong>AI 辅助解析</strong><small>提取步骤、条件、要求与风险点</small></span><em class="tag">PARSE</em></div><div class="t-row"><b>03</b><span><strong>专业人员审核</strong><small>确认规则是否符合实验室实际要求</small></span><em class="tag">REVIEW</em></div><div class="t-row published"><b>04</b><span><strong>正式版本发布</strong><small>作为实验过程的监管依据</small></span><em class="tag">PUBLISHED</em></div><div class="t-row"><b>05</b><span><strong>持续监管与变更追溯</strong><small>关联实验过程，保留版本和事件记录</small></span><em class="tag">MONITOR</em></div></div></div></section>
+<section><div class="container"><div class="kicker">ACTIVE MONITORING</div><h2 class="section-title">发现异常，不等于立即阻断实验</h2><p class="section-desc">实验人员仍按正常流程自主操作，AI 在后台持续监管。平台根据风险等级执行分级告警，并保留人工确认与专业处置机制。</p><div class="monitor"><div class="monitor-visual"><img src="../assets/images/personnel-det3.jpg" alt="实验室 AI 主动监管示意"><div class="overlay-card"><div class="ok">● 实验准备 / 已获得有效证据</div><div class="ok">● PPE 检查 / 已满足</div><div class="warn">▲ 当前操作与 SOP 前置条件不一致，生成异常候选事件，等待规则校验。</div></div><div class="overlay-label">演示界面 · AI 识别与规则校验结果</div></div><div class="alert-list"><div class="alert"><b>01</b><span><strong>发现异常</strong><small>识别疑似步骤遗漏、顺序异常或风险行为。</small></span></div><div class="alert"><b>02</b><span><strong>规则校验</strong><small>根据正式发布的 SOP 和前置条件进行确定性判断。</small></span></div><div class="alert"><b>03</b><span><strong>风险评估与告警</strong><small>结合风险等级、可信度和异常持续时间执行分级通知。</small></span></div><div class="alert"><b>04</b><span><strong>人工确认与整改</strong><small>相关人员确认、处理整改，并形成关闭归档记录。</small></span></div></div></div></div></section>
+<section class="section-dark" id="technology"><div class="container"><div class="kicker">TECHNOLOGY COLLABORATION</div><h2 class="section-title">多模型协作，各司其职</h2><p class="section-desc">AI 负责感知，规则引擎负责确定性合规判断，Agent 负责复杂分析与辅助决策。VLM 不单独承担实时步骤判定。</p><div class="tech"><div class="layer"><b>数据与现场层</b><span>网络摄像头 · 实验设备 · 温度 / 湿度 / 压力等 IoT 数据</span></div><div class="arrow">↓</div><div class="layer"><b>AI 感知层</b><span>目标检测模型 · 时序行为识别 · VLM 视觉语言模型辅助复杂场景理解</span></div><div class="arrow">↓</div><div class="layer"><b>SOP 合规判断层</b><span>正式 SOP · 规则引擎 · 步骤状态 · 前置条件 · 视频与设备数据联合校验</span></div><div class="arrow">↓</div><div class="layer"><b>Agent 智能分析层</b><span>事件关联 · 原因分析 · 告警辅助 · 报告生成 · 过程追溯</span></div></div></div></section>
+<section><div class="container"><div class="kicker">TYPICAL SCENARIOS</div><h2 class="section-title">典型应用场景</h2><div class="scene"><article class="scene-card"><div class="num">01 / PPE</div><h3>PPE 防护规范监管</h3><p>识别实验服、护目镜、手套等防护装备佩戴情况，按规则提醒相关人员。</p></article><article class="scene-card"><div class="num">02 / ORDER</div><h3>实验步骤顺序监管</h3><p>结合连续行为识别和 SOP 前置条件，发现疑似步骤遗漏与顺序异常。</p></article><article class="scene-card"><div class="num">03 / HIGH RISK</div><h3>高风险操作监管</h3><p>针对已定义的高风险操作配置专项规则，结合视频、设备数据和人工复核。</p></article><article class="scene-card"><div class="num">04 / ENVIRONMENT</div><h3>设备与环境监管</h3><p>接入设备运行状态及环境数据，对视频无法直接观测的参数进行联合判断。</p></article></div><p class="disclaimer">免责声明：平台识别能力受摄像头视角、光照、遮挡、实验环境、模型配置和部署条件影响。视频无法直接观测的试剂浓度、反应结果及设备内部参数，应结合设备数据或人工确认。平台用于辅助实验室安全管理，不替代专业人员判断、法定责任及实验室应急预案。</p></div></section>
+<section id="contact"><div class="container"><div class="cta"><div><h2>让每一次实验，都有标准可依、有过程可查</h2><p>结合现有摄像头、实验设备与 SOP，构建适合实验室实际流程的主动式合规监管方案。</p></div><a class="btn primary" href="mailto:info@ai-buy.uk">预约产品演示</a></div></div></section></main>
+<footer class="footer"><div class="container">© 2026 苏州观象信息科技有限公司 · 实验室主动式 SOP 合规监管平台</div></footer>
+</body></html>
