@@ -115,6 +115,18 @@ section{padding:92px 0}.section-dark{background:linear-gradient(180deg,#081728,#
 @media(max-width:950px){.challenge-grid{grid-template-columns:1fr 1fr}.showcase-split,.sop-lifecycle{grid-template-columns:1fr;gap:28px}.sop-value-grid{grid-template-columns:1fr 1fr}.sop-value-grid article:nth-child(2){border-right:0}.sop-value-grid article:nth-child(3),.sop-value-grid article:nth-child(4){border-top:1px solid rgba(130,180,205,.14)}.lifecycle-track{flex-wrap:wrap}.trace-chain{flex-wrap:wrap}.trace-chain>i{width:20px}}
 @media(max-width:620px){.challenge-grid{grid-template-columns:1fr}.solution-flow{flex-direction:column;align-items:stretch}.flow-line{width:1px;height:20px;flex:none;margin:auto;background:linear-gradient(180deg,rgba(64,214,255,.15),var(--cyan),rgba(64,214,255,.15))}.flow-line:after{right:-2px;top:auto;bottom:0;transform:rotate(135deg)}.flow-node{padding:16px}.showcase-split{gap:22px}.showcase-copy .section-title{font-size:32px}.showcase-image,.sop-main-visual,.trace-visual,.architecture-visual{padding:10px;border-radius:14px}.sop-heading .section-title{font-size:34px}.sop-value-grid{grid-template-columns:1fr 1fr}.sop-value-grid article{padding:18px 12px}.sop-value-grid article:nth-child(2){border-right:0}.sop-lifecycle{padding:20px 16px}.lifecycle-track{gap:6px}.lifecycle-track span{font-size:10px;padding:8px}.alert-layout .showcase-image,.alert-layout .showcase-copy{order:initial}.trace-chain{gap:8px}.trace-chain>div{min-width:calc(50% - 16px)}.trace-chain>i{display:none}.visual-corner{left:18px;bottom:18px;font-size:8px}}
 .trace-intro{display:flex;align-items:center;justify-content:center;gap:34px;text-align:left}.trace-intro-copy{flex:1;max-width:650px}.trace-intro-copy .section-desc{margin-left:0;margin-right:0}.trace-intro-image{flex:0 0 220px;padding:10px;border:1px solid rgba(64,214,255,.24);border-radius:14px;background:linear-gradient(145deg,#0a2033,#061522);box-shadow:0 16px 44px rgba(0,0,0,.22)}.trace-intro-image img{display:block;width:100%;height:auto;max-height:150px;object-fit:contain;border-radius:8px;transition:transform 1.2s ease}.trace-intro-image:hover img{transform:scale(1.025)}@media(max-width:620px){.trace-intro{flex-direction:column;align-items:stretch;gap:18px;text-align:center}.trace-intro-copy .section-desc{margin-left:auto;margin-right:auto}.trace-intro-image{flex:initial;max-width:220px;margin:0 auto}}
+
+/* Solution banner: visual bridge from concept to laboratory scene */
+.solution-banner-section{padding:34px 0 54px}
+.solution-banner{position:relative;overflow:hidden;border:1px solid rgba(64,214,255,.24);border-radius:20px;background:#071827;box-shadow:0 24px 70px rgba(0,0,0,.24)}
+.solution-banner img{display:block;width:100%;height:auto;max-height:460px;object-fit:contain;transition:transform 1.2s cubic-bezier(.2,.65,.25,1)}
+.solution-banner:hover img{transform:scale(1.012)}
+.solution-banner:after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(0deg,rgba(3,13,25,.88),rgba(3,13,25,0))}
+.solution-banner-copy{position:absolute;z-index:1;left:clamp(20px,4vw,48px);bottom:clamp(18px,3vw,34px);max-width:680px}
+.solution-banner-copy span{display:block;color:var(--cyan);font-size:10px;font-weight:800;letter-spacing:.18em}
+.solution-banner-copy strong{display:block;margin-top:8px;color:#f3f8fc;font-size:clamp(19px,2.6vw,30px);line-height:1.3;text-shadow:0 2px 16px rgba(0,0,0,.35)}
+@media(max-width:620px){.solution-banner-section{padding:22px 0 38px}.solution-banner{border-radius:14px}.solution-banner img{max-height:none}.solution-banner:after{inset:20% 0 0}.solution-banner-copy{left:16px;right:16px;bottom:14px}.solution-banner-copy span{font-size:8px}.solution-banner-copy strong{font-size:17px}}
+
 </style>
 </head>
 <body>
@@ -155,6 +167,18 @@ section{padding:92px 0}.section-dark{background:linear-gradient(180deg,#081728,#
 
 <section class="section-dark solution-section" id="process"><div class="container"><div class="kicker">THE SOLUTION</div><h2 class="section-title">从人工检查，走向 AI 主动监管</h2><p class="section-desc">以 SOP 为标准，以视觉感知为入口，以规则判断为核心，将实验现场、合规判断和风险处置连接起来。</p><div class="solution-flow">
 <div class="flow-node"><span class="flow-icon">01</span><b>SOP 标准</b><small>数字化规则</small></div><i class="flow-line"></i><div class="flow-node"><span class="flow-icon">02</span><b>AI 感知</b><small>人员 · PPE · 行为</small></div><i class="flow-line"></i><div class="flow-node"><span class="flow-icon">03</span><b>合规判断</b><small>步骤 · 条件 · 时序</small></div><i class="flow-line"></i><div class="flow-node"><span class="flow-icon">04</span><b>主动告警</b><small>分级响应 · 处置</small></div></div><div class="solution-foot"><span></span>让现有摄像头从“看得见”，升级为“看得懂、能判断、可追溯”</div></div></section>
+
+<section class="solution-banner-section" aria-label="实验室主动合规监管场景">
+  <div class="container">
+    <div class="solution-banner">
+      <img src="../assets/images/laboratory-sop-banner.webp" alt="现代实验室场景，展现主动式 SOP 合规监管的应用环境">
+      <div class="solution-banner-copy">
+        <span>FROM PASSIVE RECORDING TO ACTIVE COMPLIANCE</span>
+        <strong>让实验室监管，从被动记录走向主动合规</strong>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="ppe-section"><div class="container showcase-split"><div class="showcase-copy"><div class="kicker">01 / AI VISION · PPE</div><h2 class="section-title">先看见现场，<br>才能理解实验过程</h2><p class="section-desc">接入现有网络摄像头，持续识别实验人员及基础防护状态，为后续 SOP 执行判断提供现场证据。</p><ul class="feature-points"><li>实验服、护目镜、手套等 PPE 穿戴检测</li><li>人员、实验区域与关键器具识别</li><li>为连续行为分析提供视觉事件</li></ul></div><div class="showcase-image"><img src="../assets/images/laboratory-sop-ppe.webp" alt="实验室 PPE 穿戴识别与视觉监管"><span class="image-caption">AI VISION / PERSONAL PROTECTIVE EQUIPMENT</span></div></div></section>
 
