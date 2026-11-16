@@ -1,13 +1,13 @@
 /* Google Tag Manager + GA4 integration for V8 website.
  *
- * GTM container: GTM-NKKFPSCW
+ * GTM container: GTM-NQML8862
  * GA4 Measurement ID: G-VN5MT41YBP
  *
  * Configure the Google tag with the GA4 Measurement ID inside GTM.
  * Do not call gtag('config', ...) from this GTM-container installation.
  */
 (function () {
-  const containerId = 'GTM-NKKFPSCW';
+  const containerId = 'GTM-NQML8862';
 
   // Install GTM once and preserve any events queued before the container loads.
   window.dataLayer = window.dataLayer || [];
