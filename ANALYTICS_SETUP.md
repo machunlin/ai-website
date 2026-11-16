@@ -2,7 +2,7 @@
 
 ## 当前使用的 ID
 
-- Google Tag Manager 容器：`GTM-NKKFPSCW`
+- Google Tag Manager 容器：`GTM-NQML8862`
 - Google Analytics 4 衡量 ID：`G-VN5MT41YBP`
 
 网站代码负责加载 GTM 容器并推送业务事件；GA4 标签需要在 GTM 控制台中配置并发布。
@@ -11,7 +11,7 @@
 
 ### 1. 创建 Google 标签
 
-进入 [Google Tag Manager](https://tagmanager.google.com/) 并打开容器 `GTM-NKKFPSCW`：
+进入 [Google Tag Manager](https://tagmanager.google.com/) 并打开容器 `GTM-NQML8862`：
 
 1. 进入「代码」/「Tags」，新建标签，类型选择 **Google 标签（Google tag）**。
 2. 标签 ID 填写 `G-VN5MT41YBP`。
